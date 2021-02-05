@@ -1,0 +1,20 @@
+version: 0.2
+
+phases:
+  install:
+    commands:
+      - echo install dependencies
+  pre_build:
+    commands:
+      - set
+      - find .
+  build:
+    commands:
+      - python setup.py sdist
+  post_build:
+    commands:
+artifacts:
+  files:
+    - dist/aws_with-*.tar.gz
+    - testspec.yml
+  discard-paths: yes
